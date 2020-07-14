@@ -52,35 +52,30 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 function calculator(op) {
 
-    switch (op) {
-        case '+':
-            return function(a, b) {
-                return a + b;
-            }
-            break;
-        case '-':
-            return function(a, b) {
-                return a - b;
-            }
-            break;
-        case '*':
-            return function(a, b) {
-                return a * b;
-            }
-            break;
-        case '/':
-            return function(a, b) {
-                return a / b;
-            }
-            break;
-        case '%':
-            return function(a, b) {
-                return a % b;
-            }
-            break;
-        default:
-            return 'Operação inválida';
+    return function(a, b) {
+        var result;
+        switch (op) {
+            case '+':
+                result = a + b;
+                break;
+            case '-':
+                result = a - b;
+                break;
+            case '*':
+                result = a * b;
+                break;
+            case '/':
+                result = a / b;
+                break;
+            case '%':
+                result = a % b;
+                break;
+            default:
+                return 'Operação inválida';
+        }
+        return 'Resultado da operação: ' + a + ' ' + op + ' ' + b + ' = ' + result;
     }
+
 
 }
 
