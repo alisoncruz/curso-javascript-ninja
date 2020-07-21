@@ -35,9 +35,13 @@
   Após o loop, mostre a frase:
   'The person has [COUNTER] properties'
   */
+  var counter = 0;
   for (prop in person) {
+    counter++;
     console.log('The ' + prop + ' of person is ' + person[prop]);
   }
+
+  console.log('The person has ' + counter + ' properties');
 
   /*
   Crie uma função chamada `moreThan`, que vai verificar se a pessoa (objeto
