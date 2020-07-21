@@ -122,9 +122,14 @@ e faça a indentação correta.
   - Se "sum" for "false", mostrar no console a mensagem de erro.
   */
 
-  number1 = 10;
-  number2 = 50;
-  console.log(showOperationMessage(operationSignal, number1, number2), sum ? sum(number1, number2) : showErrorMessage(operationSignal));
+  if (sum) {
+    number1 = 10;
+    number2 = 50;
+    console.log(showOperationMessage(operationSignal, number1, number2), sum(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
+
 
   /*
   Repita desde o "PASSO 2" com as operações de subtração, multiplicação,
@@ -132,30 +137,64 @@ e faça a indentação correta.
   "multiplication", "division" e "mod".
   */
 
-  number1 = 100;
-  number2 = 40;
   operationSignal = '-';
   var subtraction = calculator(operationSignal);
-  console.log(showOperationMessage(operationSignal, number1, number2), subtraction ? subtraction(number1, number2) : showErrorMessage(operationSignal));
+
+  if (subtraction) {
+    number1 = 100;
+    number2 = 40;
+    console.log(showOperationMessage(operationSignal, number1, number2), subtraction(number1, number2));
+  } else {
+    console.log(showOperationMessage(operationSignal));
+  }
+
 
   operationSignal = '*';
   var multiplication = calculator(operationSignal);
-  console.log(showOperationMessage(operationSignal, number1, number2), multiplication ? multiplication(number1, number2) : showErrorMessage(operationSignal));
+  if (multiplication) {
+    number1 = 200;
+    number2 = 2;
+    console.log(showOperationMessage(operationSignal, number1, number2), multiplication(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
+
 
   operationSignal = '/';
   var division = calculator(operationSignal);
-  console.log(showOperationMessage(operationSignal, number1, number2), division ? division(number1, number2) : showErrorMessage(operationSignal));
-  
+  if (division) {
+    number1 = 600;
+    number2 = 15;
+    console.log(showOperationMessage(operationSignal, number1, number2), division(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
+
+
   operationSignal = '%';
   var mod = calculator(operationSignal);
-  console.log(showOperationMessage(operationSignal, number1, number2), mod ? mod(number1, number2) : showErrorMessage(operationSignal));
-  
+  number1 = 200;
+  number2 = 10;
+  if (calculator) {
+    console.log(showOperationMessage(operationSignal, number1, number2), mod(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
+
+
   /*
   Repita o PASSO 2 novamente, mas passando um operador inválido, para ver se
   a mensagem de erro será mostrada no console.
   */
- operationSignal = '@';
- var operation = calculator(operationSignal);
- console.log(showOperationMessage(operationSignal, number1, number2), operation ? operation(number1, number2) : showErrorMessage(operationSignal));
+  operationSignal = '@';
+  var operation = calculator(operationSignal);
+  if (operation) {
+    number1 = 300;
+    number2 = 10;
+    console.log(showOperationMessage(operationSignal, number1, number2), operation(number1, number2));
+  } else {
+    console.log(showErrorMessage(operationSignal));
+  }
+
 
 })();
