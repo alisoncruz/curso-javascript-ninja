@@ -115,7 +115,7 @@ Envolva todo o código desse desafio em uma IIFE.
   */
   console.log('\nE buscando a partir do último índice, o { number: 2 } existe?');
   // ?
-  var contem = (numberObjects.lastIndexOf(obj)) > -1;
+  var contem = (numberObjects.lastIndexOf(obj), 2) > -1;
   console.log(contem ? 'Existe' : 'Não Existe', 'um objeto { number: 2 } em numberObjects!');
   /*
     Verifique se `justMod2Or3` é um array. Se for, mostre-o no console, no
@@ -123,7 +123,7 @@ Envolva todo o código desse desafio em uma IIFE.
     */
   console.log('\njustMod2Or3 é um array? Se for, a representação dele em String é:');
   // ?
-  if(Array.isArray(justMod2Or3)){
+  if (Array.isArray(justMod2Or3)) {
     console.log(justMod2Or3.toString());
   }
 
