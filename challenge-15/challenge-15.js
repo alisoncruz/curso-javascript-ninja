@@ -34,8 +34,8 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
       return this.age;
     }
 
-    this.addAge = function (years) {
-      this.age += years;
+    this.addAge = function () {
+      this.age += arguments[0];
       return this;
     }
   }
@@ -79,12 +79,9 @@ Crie um arquivo chamado index.html e adicione esse script ao HTML.
   - "[NOME COMPLETO] agora tem [NOVA IDADE] anos."
   */
   console.log('\nNova idade das pessoas:');
-  paulo.addAge(5);
-  marcio.addAge(8);
-  rafael.addAge(9);
-
-  console.log(paulo.getFullName() + ' agora tem ' + paulo.age);
-  console.log(marcio.getFullName() + ' agora tem ' + marcio.age);
-  console.log(rafael.getFullName() + ' agora tem ' + rafael.age);
+  
+  console.log(paulo.getFullName() + ' agora tem ' + paulo.addAge(5).getAge());
+  console.log(marcio.getFullName() + ' agora tem ' + marcio.addAge(8).getAge());
+  console.log(rafael.getFullName() + ' agora tem ' + rafael.addAge(9).getAge());
 
 })()
